@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 
 import { LinkNavigation } from "./linkNavigation";
@@ -12,12 +14,12 @@ export function NavigationMenu() {
         Início
       </LinkNavigation> 
 
-      <LinkNavigation link="/">
+      <LinkNavigation link="chart">
         <ChartPieSlice/>
         Gráfico
       </LinkNavigation> 
 
-      <LinkNavigation link="/">
+      <LinkNavigation link="gols">
         <Coins/>
         Metas
       </LinkNavigation> 

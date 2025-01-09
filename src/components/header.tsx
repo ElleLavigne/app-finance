@@ -1,10 +1,16 @@
+"use client"
+
 import { checkDateGreeting } from "@/utils/checkDateGreeting";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { NavigationMenu } from "./navMenu";
 
 export function Header() {
   const currentDate = new Date();
   return (
-    <div className="flex items-center gap-2">
+    <header className="flex flex-col p-6">
+
+      <div className="flex gap-2">
+
       <Avatar>
         <AvatarImage src="https://github.com/shadcn.png" />
         <AvatarFallback>CN</AvatarFallback>
@@ -15,7 +21,11 @@ export function Header() {
         <p className="font-medium text-zinc-400 text-[0.75rem]">
           {checkDateGreeting(currentDate)} {currentDate.toLocaleDateString()}
         </p>
+        </div>
+
       </div>
-    </div>
+
+      <NavigationMenu/> 
+    </header>
   );
 }

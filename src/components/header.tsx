@@ -12,7 +12,7 @@ export function Header() {
       <div className="flex gap-2">
 
       <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" />
+        <AvatarImage src="https://github.com/" />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
 

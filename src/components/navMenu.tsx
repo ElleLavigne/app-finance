@@ -3,15 +3,15 @@
 import Link from "next/link";
 
 import { LinkNavigation } from "./linkNavigation";
-import { ChartPieSlice, Coins, House } from "phosphor-react";
+import { ChartPieSlice, Coins, SquaresFour } from "phosphor-react";
 
 export function NavigationMenu() {
   return (
    <div className="flex gap-4 items-center justify-center p-8">
 
       <LinkNavigation link="/">
-        <House />
-        Início
+        <SquaresFour />
+        Resumo
       </LinkNavigation> 
 
       <LinkNavigation link="chart">

@@ -2,6 +2,7 @@
 
 import { BalanceSummaryCard } from "@/components/balanceSummaryCard";
 import { SependingByCategorySummary } from "./chart/spendingByCategoryChart";
+import { SavingdGolsSummary } from "./chart/savingsGoalsSummary";
 
 export default function Home() {
   return (
@@ -17,6 +18,11 @@ export default function Home() {
           </p>
 
           <SependingByCategorySummary />
+        </div>
+
+        <div className="flex flex-col gap-4">
+          <p className="font-medium text-zinc-600">Resumo geral da sua meta</p>
+        <SavingdGolsSummary/>
         </div>
       </div>
     </>

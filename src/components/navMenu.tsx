@@ -14,16 +14,16 @@ export function NavigationMenu() {
         Resumo
       </LinkNavigation> 
 
-      <LinkNavigation link="dashboard/chart">
+      <LinkNavigation link="/dashboard/chart">
         <ChartPieSlice/>
         Gráfico
       </LinkNavigation> 
 
-      <LinkNavigation link="dashboard/goals">
+      <LinkNavigation link="/dashboard/goals">
         <Coins/>
         Metas
       </LinkNavigation> 
-      <LinkNavigation link="dashboard/category">
+      <LinkNavigation link="/dashboard/category">
         <Cube/>
         Categorias
       </LinkNavigation> 

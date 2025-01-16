@@ -3,25 +3,33 @@
 import Link from "next/link";
 
 import { LinkNavigation } from "./linkNavigation";
-import { ChartPieSlice, Coins, SquaresFour } from "phosphor-react";
+import { ChartPieSlice, Coins, Cube, Gear, SquaresFour } from "phosphor-react";
 
 export function NavigationMenu() {
   return (
-   <div className="flex gap-4 items-center justify-center p-8">
+   <div className="flex gap-4 items-center justify-center ">
 
-      <LinkNavigation link="/">
+      <LinkNavigation link="/dashboard">
         <SquaresFour />
         Resumo
       </LinkNavigation> 
 
-      <LinkNavigation link="chart">
+      <LinkNavigation link="dashboard/chart">
         <ChartPieSlice/>
         Gráfico
       </LinkNavigation> 
 
-      <LinkNavigation link="gols">
+      <LinkNavigation link="dashboard/goals">
         <Coins/>
         Metas
+      </LinkNavigation> 
+      <LinkNavigation link="dashboard/category">
+        <Cube/>
+        Categorias
+      </LinkNavigation> 
+      <LinkNavigation link="">
+        <Gear/>
+        Configuração
       </LinkNavigation> 
       </div>
    

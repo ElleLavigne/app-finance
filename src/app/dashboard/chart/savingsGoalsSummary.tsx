@@ -49,7 +49,10 @@ const chartConfig = {
 
 export function SavingdGolsSummary() {
   return (
-    <Card className="flex flex-col">
+    <div className="flex flex-col gap-4">
+    <p className="font-medium text-foreground ">Resumo geral da sua meta</p>
+
+    <Card className="flex flex-col ">
       <CardHeader className="items-center pb-0">
         <CardTitle>Economia pora metas</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
@@ -89,5 +92,6 @@ export function SavingdGolsSummary() {
        
       </CardFooter>
     </Card>
+    </div>
   )
 }

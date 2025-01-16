@@ -1,16 +1,11 @@
-
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../index.css"
-import { Header } from "@/components/header";
+import "../index.css";
+import { ThemeProvider } from "@/components/theme/themeProvider";
 
 const inter = Inter({
-
   subsets: ["latin"],
 });
-
-
 
 export const metadata: Metadata = {
   title: "Safe Money",
@@ -23,11 +18,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`flex flex-col h-[100vh]  ${inter.className} antialiased`}
+        className={`flex flex-col h-[100vh] bg-background  ${inter.className} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

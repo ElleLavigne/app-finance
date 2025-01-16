@@ -52,7 +52,11 @@ const chartConfig = {
 
 export function SependingByCategorySummary() {
   return (
-    <Card className="flex flex-col">
+    <div className="flex flex-col gap-4 ">
+    <p className="font-medium text-foreground ">
+    Resumo de gasto por categoria
+  </p>
+    <Card className="flex flex-col ">
       <CardHeader className="items-center pb-0">
         <CardTitle>Gastos por categoria</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
@@ -72,5 +76,6 @@ export function SependingByCategorySummary() {
         </ChartContainer>
       </CardContent>
     </Card>
+    </div>
   )
 }

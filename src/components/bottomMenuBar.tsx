@@ -1,9 +1,8 @@
 "use client"
 
-export default function Goals(){
+export function BottomMenuBar(){
     return(
         <>
-        Metas
         </>
     )
 }

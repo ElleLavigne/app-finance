@@ -9,7 +9,7 @@ import { signInWithGoogle } from "@/lib/firebase/signInWithGoogle";
 import { useAuth } from "@/contexts/AuthContext";
 
 export default function Login() {
-  const {credential, setCredential} = useAuth()
+  const { currentUser } = useAuth();
   return (
     <>
       <div className="app-container w-full flex-1 flex flex-col p-6 justify-center gap-6 ">
@@ -21,7 +21,7 @@ export default function Login() {
           <p className="text-zinc-600 text-sm">Faça Login para começar</p>
         </div>
         <div>
-          <p>user:{credential?.user.displayName}</p>
+          <p>user:{currentUser?.displayName}</p>
         </div>
         <div>
           <form className="flex flex-col gap-4">
@@ -40,8 +40,7 @@ export default function Login() {
               className="w-full"
               type="button"
               onClick={async () => {
-                const result = await signInWithGoogle();
-                setCredential(result);
+                await signInWithGoogle();
               }}
             >
               Entrar com o google

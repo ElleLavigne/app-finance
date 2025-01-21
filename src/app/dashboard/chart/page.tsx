@@ -4,7 +4,7 @@
 export default function Chart(){
     return(
         <>
-       Gráficos
+       Em breve
       
         </>
     )

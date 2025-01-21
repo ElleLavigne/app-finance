@@ -16,7 +16,7 @@ export function LinkNavigation(props: IProps) {
   return (
     <Link
       data-current={path === props.link}
-      className="w-min flex gap-2 items-center font-medium text-zinc-400 data-[current=true]:text-zinc-800"
+      className="w-min flex gap-2 items-center font-medium text-zinc-400 data-[current=true]:text-zinc-800 dark:text-zinc-300"
       href={link}
     >
       {children}

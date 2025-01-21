@@ -5,8 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import logo from "@/assets/logo.svg";
 import Image from "next/image";
+import { signInWithGoogle } from "@/lib/firebase/signInWithGoogle";
+import { useState } from "react";
+import { UserCredential } from "firebase/auth";
 
 export default function Login() {
+  const [credential, setCredential] = useState<UserCredential | undefined>(undefined);
   return (
     <>
       <div className="app-container w-full flex-1 flex flex-col p-6 justify-center gap-6 ">
@@ -17,7 +21,9 @@ export default function Login() {
           <h1 className="font-bold text-3xl">Bem vindo</h1>
           <p className="text-zinc-600 text-sm">Faça Login para começar</p>
         </div>
-
+        <div>
+          <p>user:{credential?.user.displayName}</p>
+        </div>
         <div>
           <form className="flex flex-col gap-4">
             <div className="flex flex-col gap-4">
@@ -30,6 +36,16 @@ export default function Login() {
             </div>
             <Button className="w-full" type="submit">
               Acessar painel
+            </Button>
+            <Button
+              className="w-full"
+              type="button"
+              onClick={async () => {
+                const result = await signInWithGoogle();
+                setCredential(result);
+              }}
+            >
+              Entrar com o google
             </Button>
           </form>
         </div>

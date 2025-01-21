@@ -6,11 +6,10 @@ import { Label } from "@/components/ui/label";
 import logo from "@/assets/logo.svg";
 import Image from "next/image";
 import { signInWithGoogle } from "@/lib/firebase/signInWithGoogle";
-import { useState } from "react";
-import { UserCredential } from "firebase/auth";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function Login() {
-  const [credential, setCredential] = useState<UserCredential | undefined>(undefined);
+  const {credential, setCredential} = useAuth()
   return (
     <>
       <div className="app-container w-full flex-1 flex flex-col p-6 justify-center gap-6 ">

@@ -7,8 +7,10 @@ import { IncomeSummaryCard } from "@/components/incomeSummaryCard";
 import { DatePickerWithRange } from "@/components/date-picker-with-range";
 import { Button } from "@/components/ui/button";
 import { ExpenseAndIncomeSummary } from "./chart/expenseAndIncomeSummary";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function Home() {
+  const {credential, setCredential} = useAuth()
   return (
     <>
       <div className="flex flex-col pl-10 pr-10 gap-11">

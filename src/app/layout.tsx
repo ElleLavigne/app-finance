@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../index.css";
 import { ThemeProvider } from "@/components/theme/themeProvider";
+import { AuthContextProvider } from "@/contexts/AuthContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body
         className={`flex flex-col h-[100vh] bg-background  ${inter.className} antialiased`}
       >
+        <AuthContextProvider>
         <ThemeProvider
           defaultTheme="system"
           enableSystem
@@ -29,6 +31,7 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        </AuthContextProvider>
       </body>
     </html>
   );

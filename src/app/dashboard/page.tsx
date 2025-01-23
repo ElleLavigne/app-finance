@@ -7,10 +7,8 @@ import { IncomeSummaryCard } from "@/components/incomeSummaryCard";
 import { DatePickerWithRange } from "@/components/date-picker-with-range";
 import { Button } from "@/components/ui/button";
 import { ExpenseAndIncomeSummary } from "./chart/expenseAndIncomeSummary";
-import { useAuth } from "@/contexts/AuthContext";
 
 export default function Home() {
-
   return (
     <>
       <div className="flex flex-col pl-10 pr-10 gap-11">
@@ -26,7 +24,7 @@ export default function Home() {
           <IncomeSummaryCard />
         </div>
 
-        <div className="grid grid-cols-3 gap-4 ">
+        <div className=" ">
           <ExpenseAndIncomeSummary />
         </div>
       </div>

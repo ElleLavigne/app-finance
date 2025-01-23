@@ -10,3 +10,4 @@ export async function signInWithGoogle() {
     console.log("Erro na autentificação com o google", error);
   }
 }
+

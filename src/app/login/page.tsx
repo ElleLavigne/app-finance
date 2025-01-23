@@ -7,9 +7,22 @@ import logo from "@/assets/logo.svg";
 import Image from "next/image";
 import { signInWithGoogle } from "@/lib/firebase/signInWithGoogle";
 import { useAuth } from "@/contexts/AuthContext";
+import { GoogleLogo } from "phosphor-react";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+// Exemplos de falsy: qualquer coisa que é undefined, null e 0.
+// Qualquer coisa difrente de um falsy é truthy.
 
 export default function Login() {
+  const router = useRouter();
   const { currentUser } = useAuth();
+  useEffect(() => {
+    if (currentUser) {
+      router.push("/dashboard");
+    }
+  }, [currentUser]);
+
   return (
     <>
       <div className="app-container w-full flex-1 flex flex-col p-6 justify-center gap-6 ">
@@ -37,12 +50,13 @@ export default function Login() {
               Acessar painel
             </Button>
             <Button
-              className="w-full"
+              className="w-full bg-slate-50 text-zinc-800 stroke-zinc-600 hover:bg-slate-300"
               type="button"
               onClick={async () => {
                 await signInWithGoogle();
               }}
             >
+              <GoogleLogo color="#27272a" />
               Entrar com o google
             </Button>
           </form>

@@ -19,12 +19,9 @@ type IAuthProvider = {
   currentUser: User | null;
   setCurrentUser: Dispatch<SetStateAction<User | null>>;
 };
-
 const authContext = createContext<IAuthProvider>({} as IAuthProvider);
+
 export function AuthContextProvider({ children }: IProps) {
-  const [credential, setCredential] = useState<UserCredential | undefined>(
-    undefined
-  );
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   useEffect(() => {
     firebaseAuth.onAuthStateChanged((user) => {

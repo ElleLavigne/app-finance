@@ -1,6 +1,8 @@
 import { SependingByCategorySummary } from "../chart/spendingByCategoryChart";
 import { CategoryRegistrationForm } from "./categoryRegistrationForm";
 
+
+
 export default function Category() {
   return (
     <>

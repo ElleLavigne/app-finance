@@ -6,8 +6,13 @@ import { NavigationMenu } from "./navMenu";
 import { Separator } from "./ui/separator";
 import { ThemeProvider } from "./theme/themeProvider";
 import { ThemeToggleProvider } from "./theme/themeToggleProvider";
+import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { LogoutButton } from "./ui/logout-button";
 
 export function Header() {
+  const { currentUser } = useAuth();
+
   const currentDate = new Date();
   return (
     <header className="flex flex-col p-6">
@@ -19,7 +24,7 @@ export function Header() {
 
         <div className="flex flex-col">
           <h3 className="font-medium text-foreground  text-[1rem]">
-            Nome da conta
+            {currentUser?.displayName}
           </h3>
           <p className="font-medium text-muted-foreground  text-[0.75rem]">
             {checkDateGreeting(currentDate)} {currentDate.toLocaleDateString()}
@@ -31,8 +36,9 @@ export function Header() {
         <div className="flex items-center">
           <NavigationMenu />
         </div>
-        <div className="ml-auto">
+        <div className="flex gap-4 ml-auto">
           <ThemeToggleProvider />
+          <LogoutButton/>
         </div>
       </div>
       <Separator className="mt-4" />

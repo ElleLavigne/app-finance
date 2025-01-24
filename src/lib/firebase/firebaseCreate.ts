@@ -7,5 +7,8 @@ type IProps = {
 };
 export async function firebaseCreate({ collection, data, id }: IProps) {
   const docRef = doc(firebaseDB, `${collection}/${id}`);
-  await setDoc(docRef, data);
+  await setDoc(docRef, {
+    ...data, 
+    id
+  });
 }

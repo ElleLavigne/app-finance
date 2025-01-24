@@ -2,51 +2,48 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { firebaseCreate } from "@/lib/firebase/firebaseCreate";
-import { ICategory } from "@/schemas/categories/categories";
-import {useForm} from 'react-hook-form'
+import { createCategory } from "@/lib/firebase/categories/createCategory";
 
-const category: ICategory = {
-  id: '1',
-  name: 'Mercado',
-  description: 'Gasto fixo do mercado',
-  color: '#20b42c'
-}
+import { ICategory } from "@/schemas/categories/categories";
+import { useForm } from "react-hook-form";
+
+
 
 export function CategoryRegistrationForm() {
-  const form = useForm({
-      defaultValues: {},
-       
+  const { register, handleSubmit } = useForm<ICategory>();
 
-  })
+  async function handleCreateCategory(data: ICategory) {
+
+  await  createCategory({
+   data: data
+    }); 
+    window.alert('Cadastrado')
+  }
+
   return (
     <div>
-      <form className="flex gap-4 items-end ">
+      <form
+        onSubmit={handleSubmit(handleCreateCategory)}
+        className="flex gap-4 items-end "
+      >
         <div className="flex flex-col gap-2">
           <Label>Título</Label>
-          <Input id="title" />
+          <Input id="title" {...register("name")} />
         </div>
         <div className="flex flex-col gap-2">
           <Label>Descrição</Label>
-          <Input id="description" />
+          <Input id="description" {...register("description")} />
         </div>
         <div className="flex flex-col gap-2">
           <Label>Cor</Label>
-          <Input className="border rounded-full" type="color" id="color" />
+          <Input
+            className="border rounded-full"
+            type="color"
+            id="color"
+            {...register("color")}
+          />
         </div>
-        <Button
-          type="button"
-          onClick={() => {
-            firebaseCreate({
-              id: category.id,
-              collection: "categories",
-              data: category
-              
-            });
-          }}
-        >
-          Cadastrar
-        </Button>
+        <Button type="submit">Cadastrar</Button>
       </form>
     </div>
   );

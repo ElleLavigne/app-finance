@@ -7,19 +7,15 @@ import { createCategory } from "@/lib/firebase/categories/createCategory";
 import { ICategory } from "@/schemas/categories/categories";
 import { useForm } from "react-hook-form";
 
-
-
 export function CategoryRegistrationForm() {
   const { register, handleSubmit } = useForm<ICategory>();
 
   async function handleCreateCategory(data: ICategory) {
-
-  await  createCategory({
-   data: data
-    }); 
-    window.alert('Cadastrado')
+    await createCategory({
+      data: data,
+    });
+    window.alert("Cadastrado");
   }
-
   return (
     <div>
       <form

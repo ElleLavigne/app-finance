@@ -20,7 +20,7 @@ export function CategoryRegistrationForm() {
     <div>
       <form
         onSubmit={handleSubmit(handleCreateCategory)}
-        className="flex gap-4 items-end "
+        className="flex gap-4 items-end"
       >
         <div className="flex flex-col gap-2">
           <Label>Título</Label>
@@ -41,6 +41,9 @@ export function CategoryRegistrationForm() {
         </div>
         <Button type="submit">Cadastrar</Button>
       </form>
+
+    
+
     </div>
   );
 }

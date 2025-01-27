@@ -1,5 +1,6 @@
 import { SependingByCategorySummary } from "../chart/spendingByCategoryChart";
 import { CategoryRegistrationForm } from "./categoryRegistrationForm";
+import { RegisteredCategories } from "./RegisteredCategories";
 
 
 
@@ -15,6 +16,7 @@ export default function Category() {
           <p className="font-semibold text-foreground">Adicione uma categoria</p>
         <CategoryRegistrationForm/>
         </div>
+        <RegisteredCategories/>
       </div>
       
     </>

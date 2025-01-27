@@ -15,7 +15,7 @@ import { zFirebaseCollection } from "@/lib/firebase/@types/collections";
 import { ICategory } from "@/schemas/categories/categories";
 
 export function RegisteredCategories() {
-  const [list, setList] = useState<ICategory[]>([]);
+  const [list, setList] = useState<ICategory[]>([]); //armazenando a lista no estado
 
   async function handleFirebaseList() {
     console.log('buscando dado')

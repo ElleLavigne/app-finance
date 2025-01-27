@@ -19,9 +19,9 @@ export function NavigationMenu() {
         Gráfico
       </LinkNavigation> 
 
-      <LinkNavigation link="/dashboard/goals">
+      <LinkNavigation link="/dashboard/transactions">
         <Coins/>
-        Metas
+        Transações
       </LinkNavigation> 
       <LinkNavigation link="/dashboard/category">
         <Cube/>

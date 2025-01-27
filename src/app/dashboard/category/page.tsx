@@ -1,4 +1,5 @@
 import { SependingByCategorySummary } from "../chart/spendingByCategoryChart";
+import { TransactionRegisterForm } from "../transactions/transactionRegisterForm";
 import { CategoryRegistrationForm } from "./categoryRegistrationForm";
 import { RegisteredCategories } from "./RegisteredCategories";
 

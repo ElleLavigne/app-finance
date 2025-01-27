@@ -11,7 +11,7 @@ export default function Transactions(){
        <h1 className="text-4xl text-foreground font-semibold">Suas transações</h1>
        <ListTransactionPerformed/>
        <Separator/>
-       <div className="app-container flex flex-col items-center">
+       <div className="flex flex-col gap-6">
         <p className="font-medium text-lg">Adicione uma nova transação</p>
        <TransactionRegisterForm/>
        </div>

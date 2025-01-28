@@ -1,25 +1,24 @@
 import { SependingByCategorySummary } from "../chart/spendingByCategoryChart";
-import { TransactionRegisterForm } from "../transactions/transactionRegisterForm";
+
 import { CategoryRegistrationForm } from "./categoryRegistrationForm";
 import { RegisteredCategories } from "./RegisteredCategories";
-
-
 
 export default function Category() {
   return (
     <>
       <div className="p-8  flex flex-col gap-8">
-        {/* <h2 className="text-xl font-semibold">Cadastro de categorias</h2> */}
+
         <div className="">
-        <SependingByCategorySummary/>
+          <SependingByCategorySummary />
         </div>
         <div className="flex flex-col gap-6">
-          <p className="font-semibold text-foreground">Adicione uma categoria</p>
-        <CategoryRegistrationForm/>
+          <p className="font-semibold text-foreground">
+            Adicione uma categoria
+          </p>
+          <CategoryRegistrationForm />
         </div>
-        <RegisteredCategories/>
+        <RegisteredCategories />
       </div>
-      
     </>
   );
 }

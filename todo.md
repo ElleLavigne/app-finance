@@ -1,0 +1,4 @@
+--Tratar o dado de nova transação para aceitar apenas o tipo registrado lá, usar zod e hookform/resolvers
+--Adicionar o select no input do tipo de transação
+--Mudar para real o input de valor
+--Listar as transações
